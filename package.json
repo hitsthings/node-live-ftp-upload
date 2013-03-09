@@ -1,6 +1,6 @@
 {
   "name": "live-ftp-upload",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Upload changed files",
   "dependencies": {
     "ftp": "~0.2.9",
