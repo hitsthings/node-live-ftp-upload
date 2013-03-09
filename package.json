@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Upload changed files",
   "dependencies": {
-    "ftp": "~0.2.8"
+    "ftp": "~0.2.9",
+    "async": "~0.2.5"
   }
 }
