@@ -30,4 +30,5 @@ Uses [node-ftp](https://github.com/mscdex/node-ftp) under the hood. The `connect
 
 ## Release History
 
+- 0.1.1 - really works for me - support changing dir contents.
 - 0.1.0 - works for me
