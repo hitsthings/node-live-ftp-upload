@@ -292,6 +292,8 @@ module.exports = function(opts, cb) {
             opts.persistent :
             true
     }, function(event, filename, pathname) {
+        var ignored = opts.ignored || [];
+        var extension;
         if (!filename) {
             // happens on adds and deletes - no filename provided
             return;
@@ -299,7 +301,13 @@ module.exports = function(opts, cb) {
 
         if (getAndSetFiredRecently(pathname)) return;
 
+        extension = pathname.split('.').pop();
         console.log(pathname + ' changed.');
+
+        if(ignored.indexOf(extension) !== -1) {
+            console.log(filename + " ignored.");
+            return;
+        }
 
         fs.stat(pathname, function(err, stat) {
             if (err) throw err;
@@ -317,6 +325,7 @@ module.exports.exampleOpts = {
     remoteDir : '/',
     filter : null,
     persistent : true,
+    ignored: ["tmp"],
     connect : {
         host : 'remote.com',
         port : '1337',
