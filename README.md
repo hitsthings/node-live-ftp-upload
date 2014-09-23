@@ -16,6 +16,7 @@ npm install live-ftp-upload
 require('live-ftp-upload')({
     dir : './path/to/watch',
     remoteDir : '/where/to/upload',
+    ignored: ["tmp", "bin"],
     connect : {
         host : 'remote-env.example.com',
         user : 'ftp-user',
